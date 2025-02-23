@@ -24,7 +24,7 @@ p {
 /* Instructions */
 .instructions-wrapper {
     background: linear-gradient(135deg, #6a82fb, #fc5c7d);
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;

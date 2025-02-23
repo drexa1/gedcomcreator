@@ -5,8 +5,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="./favicon.png" type="image/png"/>
         <title>Free GEDCOM creator: generate your family tree</title>
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-    <p>Hi</p>
+    <div class="body">
+        <h1>Digitalize your family records into a family tree file</h1>
+        <div class="instructions-wrapper">
+            <h2>How to use the creator:</h2>
+            <div class="instructions-container">
+                <div class="instruction-box">
+                    <h3>Download</h3>
+                    <p>Choose an image from your photo library that is less than 2GB in size.</p>
+                </div>
+                <div class="instruction-box">
+                    <h3>Fill-in</h3>
+                    <p>Upload your image to automatically convert it to SVG format.</p>
+                </div>
+                <div class="instruction-box">
+                    <h3>Download</h3>
+                    <p>Your new image will download as an SVG file. Save it, share it, or keep editing it to make it your own.</p>
+                </div>
+            </div>
+        </div>
+        <div class="upload-container">
+            <div class="upload-box" onclick="document.getElementById('fileInput1').click();">
+                <input type="file" id="fileInput1" accept=".jpg, .jpeg, .png, .webp">
+                <label for="fileInput1">Upload individuals file</label>
+                <button type="button" class="choose-files-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-input-dropdown__button__icon feather feather-file-plus" data-v-73748992="">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" data-v-73748992=""></path>
+                        <polyline points="14 2 14 8 20 8" data-v-73748992=""></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12" data-v-73748992=""></line>
+                        <line x1="9" y1="15" x2="15" y2="15" data-v-73748992=""></line>
+                    </svg>
+                    Choose file
+                </button>
+            </div>
+            <div class="upload-box" onclick="document.getElementById('fileInput2').click();">
+                <input type="file" id="fileInput2" accept=".jpg, .jpeg, .png, .webp">
+                <label for="fileInput2">Upload parents file</label>
+                <button type="button" class="choose-files-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-input-dropdown__button__icon feather feather-file-plus" data-v-73748992="">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" data-v-73748992=""></path>
+                        <polyline points="14 2 14 8 20 8" data-v-73748992=""></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12" data-v-73748992=""></line>
+                        <line x1="9" y1="15" x2="15" y2="15" data-v-73748992=""></line>
+                    </svg>
+                    Choose file
+                </button>
+            </div>
+            <div class="upload-box" onclick="document.getElementById('fileInput3').click();">
+                <input type="file" id="fileInput3" accept=".jpg, .jpeg, .png, .webp">
+                <label for="fileInput3">Upload marriages file</label>
+                <button type="button" class="choose-files-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-input-dropdown__button__icon feather feather-file-plus" data-v-73748992="">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" data-v-73748992=""></path>
+                        <polyline points="14 2 14 8 20 8" data-v-73748992=""></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12" data-v-73748992=""></line>
+                        <line x1="9" y1="15" x2="15" y2="15" data-v-73748992=""></line>
+                    </svg>
+                    Choose file
+                </button>
+            </div>
+        </div>
+    </div>
     </body>
 </html>

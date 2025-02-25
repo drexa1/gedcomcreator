@@ -1,6 +1,6 @@
 import React from 'react';
 
-function App() {
+const App = () => {
     return (
         <div className="body">
             <h1>Digitalize your family records into a family file</h1>

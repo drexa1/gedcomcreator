@@ -1,5 +1,4 @@
-name: NodeJS
-run-name: nodeJS build
+name: Node.js build
 
 on:
   push:
@@ -14,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
@@ -24,7 +23,7 @@ jobs:
       - name: Build the React app
         run: |
           npm run build
-      - name: Deploy to GitHub Pages
+      - name: Commit to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages

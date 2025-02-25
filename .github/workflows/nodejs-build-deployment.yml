@@ -1,5 +1,5 @@
-name: Deploy to GitHub Pages
-run-name: deploy to GitHub Pages
+name: NodeJS
+run-name: nodeJS build
 
 on:
   push:

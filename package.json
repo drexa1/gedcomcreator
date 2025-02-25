@@ -1,0 +1,42 @@
+{
+  "name": "gedcomcreator",
+  "version": "1.0.0",
+  "description": "Digitalize your family records into a family file",
+  "main": "index.js",
+  "dependencies": {
+    "i18next": "^24.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.4.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "react-scripts": "^4.0.3"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [
+    "GEDCOM",
+    "family",
+    "genealogy"
+  ],
+  "author": "drexa1@hotmail.com",
+  "homepage": "https://github.com/drexa1/gedcomcreator",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

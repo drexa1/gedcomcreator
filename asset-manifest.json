@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/drexa1/gedcomcreator/static/css/main.de8afecc.chunk.css",
-    "main.js": "/drexa1/gedcomcreator/static/js/main.6195262a.chunk.js",
-    "main.js.map": "/drexa1/gedcomcreator/static/js/main.6195262a.chunk.js.map",
-    "runtime-main.js": "/drexa1/gedcomcreator/static/js/runtime-main.aeee54b3.js",
-    "runtime-main.js.map": "/drexa1/gedcomcreator/static/js/runtime-main.aeee54b3.js.map",
-    "static/css/2.d2e0fa52.chunk.css": "/drexa1/gedcomcreator/static/css/2.d2e0fa52.chunk.css",
-    "static/js/2.0ae23681.chunk.js": "/drexa1/gedcomcreator/static/js/2.0ae23681.chunk.js",
-    "static/js/2.0ae23681.chunk.js.map": "/drexa1/gedcomcreator/static/js/2.0ae23681.chunk.js.map",
-    "index.html": "/drexa1/gedcomcreator/index.html",
-    "static/css/2.d2e0fa52.chunk.css.map": "/drexa1/gedcomcreator/static/css/2.d2e0fa52.chunk.css.map",
-    "static/css/main.de8afecc.chunk.css.map": "/drexa1/gedcomcreator/static/css/main.de8afecc.chunk.css.map",
-    "static/js/2.0ae23681.chunk.js.LICENSE.txt": "/drexa1/gedcomcreator/static/js/2.0ae23681.chunk.js.LICENSE.txt",
-    "static/media/semantic.min.css": "/drexa1/gedcomcreator/static/media/outline-icons.ddae9b1b.woff"
+    "main.css": "/gedcomcreator/static/css/main.de8afecc.chunk.css",
+    "main.js": "/gedcomcreator/static/js/main.6195262a.chunk.js",
+    "main.js.map": "/gedcomcreator/static/js/main.6195262a.chunk.js.map",
+    "runtime-main.js": "/gedcomcreator/static/js/runtime-main.92c543c8.js",
+    "runtime-main.js.map": "/gedcomcreator/static/js/runtime-main.92c543c8.js.map",
+    "static/css/2.8f96662a.chunk.css": "/gedcomcreator/static/css/2.8f96662a.chunk.css",
+    "static/js/2.0ae23681.chunk.js": "/gedcomcreator/static/js/2.0ae23681.chunk.js",
+    "static/js/2.0ae23681.chunk.js.map": "/gedcomcreator/static/js/2.0ae23681.chunk.js.map",
+    "index.html": "/gedcomcreator/index.html",
+    "static/css/2.8f96662a.chunk.css.map": "/gedcomcreator/static/css/2.8f96662a.chunk.css.map",
+    "static/css/main.de8afecc.chunk.css.map": "/gedcomcreator/static/css/main.de8afecc.chunk.css.map",
+    "static/js/2.0ae23681.chunk.js.LICENSE.txt": "/gedcomcreator/static/js/2.0ae23681.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/gedcomcreator/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.aeee54b3.js",
-    "static/css/2.d2e0fa52.chunk.css",
+    "static/js/runtime-main.92c543c8.js",
+    "static/css/2.8f96662a.chunk.css",
     "static/js/2.0ae23681.chunk.js",
     "static/css/main.de8afecc.chunk.css",
     "static/js/main.6195262a.chunk.js"

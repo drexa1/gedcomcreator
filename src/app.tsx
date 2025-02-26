@@ -29,6 +29,7 @@ const App = () => {
             <Header as='h1'><FormattedMessage id="header.h1" defaultMessage="Digitalize all your genealogy records into a family file"/></Header>
             <p><FormattedMessage id="header.p" defaultMessage="It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative"/> <Icon name="credit card"/></p>
 
+            {/* INSTRUCTIONS SECTION ------------------------------------------------------------------------------- */}
             <div className="instructions-wrapper">
                 <h2><FormattedMessage id="instructions.h2" defaultMessage="How the tool works"/></h2>
                 <div className="instructions-container">
@@ -47,6 +48,7 @@ const App = () => {
                 </div>
             </div>
 
+            {/* UPLOAD SECTION ------------------------------------------------------------------------------------- */}
             <div className="ui upload-container">
                 <div
                     className="ui dropzone"

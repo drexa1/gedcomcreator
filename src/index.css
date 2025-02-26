@@ -1,29 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
     text-align: center;
     background-color: #f8f9fa;
-    color: #333;
+    /*overflow-y: hidden;*/
 }
 
-h1 {
+h1.ui.header {
     font-size: 2.5em;
     font-weight: 600;
     color: #222;
     margin-bottom: 15px;
     font-family: 'Inter', sans-serif;
-    margin-top: 26px !important;
+    margin-top: 30px !important;
 }
 
-p {
-    font-size: 1.1em;
-    color: #555;
-}
-
-/* Instructions */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Instructions                                                                                                       */
+/* ------------------------------------------------------------------------------------------------------------------ */
 .instructions-wrapper {
     background: linear-gradient(135deg, #6a82fb, #fc5c7d);
     padding: 40px 20px;
@@ -82,78 +76,62 @@ p {
     .instruction-box {
         width: 100%;
         max-width: 400px;
-        margin-bottom: 20px;
     }
 }
 
-/* Upload */
-
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Upload                                                                                                             */
+/* ------------------------------------------------------------------------------------------------------------------ */
 .upload-container {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1100px;
+    justify-content: center;
     margin: 30px auto;
 }
 
-.upload-box {
-    flex: 1.2;
-    background: #efeef3;
-    border: 3px dashed #bec0da;
-    padding: 50px;
-    text-align: center;
-    border-radius: 12px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    max-width: 360px;
+.dropzone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    background: url('dash-rectangle.svg') no-repeat center;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.upload-box:hover {
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.dropzone:hover {
+    background-color: #f5f5f5;
 }
 
-.upload-box input[type="file"] {
-    display: none;
+.upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
-.upload-box label {
-    font-size: 1.3em;
-    font-weight: 600;
+.dropzone p {
+    font-size: 16px;
+    color: #333;
+}
+
+.dropzone p span {
     color: #0073e6;
-    display: block;
-}
-
-.upload-box p {
-    color: #666;
-    font-size: 1em;
-    margin-top: 8px;
+    font-weight: bold;
 }
 
 /* Responsive: Stack boxes on smaller screens */
 @media (max-width: 900px) {
     .upload-container {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
     }
 
-    .upload-box {
-        width: 100%;
-        max-width: 450px;
+    .dropzone {
+        max-width: 400px;
+        height: 100px;
     }
-}
-
-.choose-files-btn {
-    background-color: #0073e6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 2px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.choose-files-btn:active {
-    background-color: #003f7a;
 }

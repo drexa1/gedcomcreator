@@ -1,9 +1,32 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
+import {Button, Header, Icon} from "semantic-ui-react";
 
 const App = () => {
+    const [files, setFiles] = useState<File[]>([]);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const handleClick = () => {
+        fileInputRef.current?.click();
+    };
+    const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+        event.preventDefault();
+        handleFiles(event.dataTransfer.files);
+    };
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        handleFiles(event.target.files);
+    };
+
+    const handleFiles = (newFiles: FileList | null) => {
+        if (newFiles) {
+            setFiles([...files, ...Array.from(newFiles)]);
+        }
+    };
+
     return (
         <div className="body">
-            <h1>Digitalize your family records into a family file</h1>
+
+            <Header as='h1'>Digitalize your family records into a family file</Header>
+
             <div className="instructions-wrapper">
                 <h2>How to use the converter:</h2>
                 <div className="instructions-container">
@@ -21,20 +44,25 @@ const App = () => {
                     </div>
                 </div>
             </div>
-            <div className="upload-container">
-                <div className="upload-box">
-                    <input type="file" accept=".csv" />
-                    <label>Upload individuals file</label>
-                </div>
-                <div className="upload-box">
-                    <input type="file" accept=".csv" />
-                    <label>Upload parents file</label>
-                </div>
-                <div className="upload-box">
-                    <input type="file" accept=".csv" />
-                    <label>Upload relationships file</label>
+
+            <div className="ui upload-container">
+                <div
+                    className="ui dropzone"
+                    onClick={handleClick}
+                    onDrop={handleDrop}
+                    onDragOver={(e) => e.preventDefault()}>
+                    <input
+                        type="file"
+                        multiple
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        style={{ display: "none" }}
+                    />
+                    <p>Drag & drop files here or <span>browse</span></p>
+                    <Button><Icon name="cloud upload" />Choose Files</Button>
                 </div>
             </div>
+
         </div>
     );
 }

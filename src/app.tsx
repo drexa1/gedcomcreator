@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {Button, Header, Icon} from "semantic-ui-react";
+import {FormattedMessage} from "react-intl";
 
 const App = () => {
     const [files, setFiles] = useState<File[]>([]);
@@ -25,23 +26,23 @@ const App = () => {
     return (
         <div className="body">
 
-            <Header as='h1'>Digitalize your family records into a family file</Header>
-            <p>It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative <Icon name="credit card"/></p>
+            <Header as='h1'><FormattedMessage id="header.h1" defaultMessage="Digitalize all your genealogy records into a family file"/></Header>
+            <p><FormattedMessage id="header.p" defaultMessage="It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative"/> <Icon name="credit card"/></p>
 
             <div className="instructions-wrapper">
-                <h2>How to use the converter:</h2>
+                <h2><FormattedMessage id="instructions.h2" defaultMessage="How the tool works"/></h2>
                 <div className="instructions-container">
                     <div className="instruction-box">
-                        <h3>Download</h3>
-                        <p>Download the templates to fill-in.</p>
+                        <h3><FormattedMessage id="instructions.download.h3" defaultMessage="Download"/></h3>
+                        <p><FormattedMessage id="instructions.download.p" defaultMessage="Get here the templates to fill-in. You need: individuals, parents, and relationships."/></p>
                     </div>
                     <div className="instruction-box">
-                        <h3>Fill-in</h3>
-                        <p>Fill-in each template with the family records.</p>
+                        <h3><FormattedMessage id="instructions.fill-in.h3" defaultMessage="Fill-in"/></h3>
+                        <p><FormattedMessage id="instructions.fill-in.p" defaultMessage="Fill-in each template with the family records. Check here if you have doubts."/></p>
                     </div>
                     <div className="instruction-box">
-                        <h3>Use</h3>
-                        <p>Download your family file so you can visualize it anywhere.</p>
+                        <h3><FormattedMessage id="instructions.collect.h3" defaultMessage="Collect"/></h3>
+                        <p><FormattedMessage id="instructions.collect.p" defaultMessage="Collect your family file so you can visualize it anywhere. Know no one? Check this."/></p>
                     </div>
                 </div>
             </div>
@@ -59,9 +60,16 @@ const App = () => {
                         onChange={handleFileChange}
                         style={{ display: "none" }}
                     />
-                    <p>Drag & drop files here or <span>browse</span></p>
-                    <Button><Icon name="cloud upload"/>Choose Files</Button>
+                    <p>
+                        <FormattedMessage id="dropzone.p.drag-n-drop" defaultMessage="Drag & drop here your filled templates, or "/>
+                        <span><FormattedMessage id="dropzone.p.browse-them" defaultMessage="browse them"/></span>
+                    </p>
+                    <p><FormattedMessage id="dropzone.p.files-needed" defaultMessage="We need all the 3 files"/></p>
+                    <Button><Icon name="upload"/><FormattedMessage id="dropzone.button.browse-files" defaultMessage="Browse files"/></Button>
                 </div>
+            </div>
+            <div>
+                <Button primary disabled={true}><FormattedMessage id="dropzone.button.submit" defaultMessage="Submit"/></Button>
             </div>
 
         </div>

@@ -93,7 +93,8 @@ p {
 .upload-container {
     display: flex;
     justify-content: center;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .dropzone {
@@ -105,7 +106,7 @@ p {
     width: 100%;
     max-width: 800px;
     height: 200px;
-    background: url('dash-rectangle.svg') no-repeat center;
+    background: url('../img/dash-rectangle.svg') no-repeat center;
     transition: background-color 0.3s ease;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -115,15 +116,16 @@ p {
     background-color: #f5f5f5;
 }
 
-.upload-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+.dropzone p {
+    margin-bottom: 5px;
 }
 
-.dropzone p {
-    font-size: 16px;
-    color: #333;
+.dropzone p:last-of-type {
+    margin-bottom: 20px;
+}
+
+.dropzone .button {
+    top: 20px !important;
 }
 
 .dropzone p span {

@@ -1,0 +1,16 @@
+{
+  "header.h1": "Digitalice sus registros genealógicos en un fichero familiar",
+  "header.p": "Gratuito (y lo será para siempre) hasta 50 familiares. Para más de 50 familiares, 0.5€ por pariente",
+  "instructions.h2": "Como funciona la herramienta",
+  "instructions.download.h3": "Descargar",
+  "instructions.download.p": "Descargue las plantillas para rellenar. Necesita: individuos, padres, y relaciones.",
+  "instructions.fill-in.h3": "Rellenar",
+  "instructions.fill-in.p": "Rellene las plantillas con la información de los familiares. Consulte aquí si tiene dudas.",
+  "instructions.collect.h3": "Recibir",
+  "instructions.collect.p": "Recoja su fichero familiar y visualícelo en cualquier visor. ¿No conoce uno? Pruebe aquí",
+  "dropzone.p.drag-n-drop": "Arrastre aquí las plantillas rellenadas, o ",
+  "dropzone.p.browse-them": "explore sus archivos",
+  "dropzone.p.files-needed": "Necesitaremos los 3 archivos",
+  "dropzone.button.browse-files": "Explorar archivos",
+  "dropzone.button.submit": "Enviar"
+}

@@ -1,8 +1,19 @@
 import ReactDOM from 'react-dom/client';
 import App from './app';
-import './index.css';
+import './assets/styles/index.css';
 import 'semantic-ui-css/semantic.min.css';
+import messages_es from './i18n/es.json';
+import messages_pl from './i18n/pl.json';
+import {IntlProvider} from "react-intl";
 
+const messages = {
+    es: messages_es,
+    pl: messages_pl
+};
+
+const language = navigator.language && navigator.language.split(/[-_]/)[0];
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <App />
+    <IntlProvider locale={language} messages={messages[language]}>
+        <App/>
+    </IntlProvider>
 );

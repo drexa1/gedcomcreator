@@ -26,7 +26,7 @@ const App = () => {
         <div className="body">
 
             <Header as='h1'>Digitalize your family records into a family file</Header>
-            <Header as='h3'>It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative</Header>
+            <p>It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative <Icon name="credit card"/></p>
 
             <div className="instructions-wrapper">
                 <h2>How to use the converter:</h2>
@@ -60,7 +60,7 @@ const App = () => {
                         style={{ display: "none" }}
                     />
                     <p>Drag & drop files here or <span>browse</span></p>
-                    <Button><Icon name="cloud upload" />Choose Files</Button>
+                    <Button><Icon name="cloud upload"/>Choose Files</Button>
                 </div>
             </div>
 

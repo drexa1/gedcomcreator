@@ -3,20 +3,25 @@
 body {
     text-align: center;
     background-color: #f8f9fa;
+
     /*overflow-y: hidden;*/
+}
+
+.header {
+    color: #555 !important;
 }
 
 h1.ui.header {
     font-size: 2.5em;
     font-weight: 600;
-    color: #222;
     margin-bottom: 15px;
     font-family: 'Inter', sans-serif;
     margin-top: 30px !important;
 }
 
-h3.ui.header {
-    margin-top: 10px;
+p {
+    color: #555;
+    font-size: 1.1em;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -67,12 +72,6 @@ h3.ui.header {
     font-weight: 600;
     color: #0073e6;
     margin-bottom: 15px;
-}
-
-.instruction-box p {
-    color: #555;
-    font-size: 1.1em;
-    margin: 0;
 }
 
 /* Responsive: Stack boxes on smaller screens */

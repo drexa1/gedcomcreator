@@ -47,6 +47,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
+            {/* INSTRUCTIONS SECTION ------------------------------------------------------------------------------- */}
 
             {/* UPLOAD SECTION ------------------------------------------------------------------------------------- */}
             <div className="ui upload-container">
@@ -73,6 +74,7 @@ const App = () => {
             <div>
                 <Button primary disabled={true}><FormattedMessage id="dropzone.button.submit" defaultMessage="Submit"/></Button>
             </div>
+            {/* UPLOAD SECTION ------------------------------------------------------------------------------------- */}
 
         </div>
     );

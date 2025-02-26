@@ -26,6 +26,7 @@ const App = () => {
         <div className="body">
 
             <Header as='h1'>Digitalize your family records into a family file</Header>
+            <Header as='h3'>It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative</Header>
 
             <div className="instructions-wrapper">
                 <h2>How to use the converter:</h2>

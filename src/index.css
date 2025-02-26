@@ -15,6 +15,10 @@ h1.ui.header {
     margin-top: 30px !important;
 }
 
+h3.ui.header {
+    margin-top: 10px;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Instructions                                                                                                       */
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -51,6 +55,11 @@ h1.ui.header {
     flex: 1;
     max-width: 280px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.instruction-box:hover {
+    background-color: #f5f5f5;
 }
 
 .instruction-box h3 {

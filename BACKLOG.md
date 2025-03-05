@@ -5,7 +5,7 @@
 [x] Basic styling  
 [x] i18n start
 [x] EN/ES csv templates
-[ ] template download logic  
+[x] template download logic  
 
 [ ] Examples popup  
 [ ] Examples carrousel  

@@ -1,8 +1,8 @@
 import React, {ReactNode, useRef, useState} from 'react';
 import {Button, Header, Icon, Message} from "semantic-ui-react";
-import {FormattedMessage} from "react-intl";
 import {saveAs} from "file-saver";
 import language from "./index";
+import {FormattedMessage} from "react-intl";
 import resources_es from "./i18n/resources/es.json";
 import resources_pl from "./i18n/resources/pl.json";
 

@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Messages                                                                                                           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.message-container {
+    overflow: hidden;
+    transition: max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+
+.message-container.expanded {
+    opacity: 1;
+    transition: opacity 1s ease, max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+
+.message-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 1s ease, max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Header                                                                                                             */
+/* ------------------------------------------------------------------------------------------------------------------ */
 body {
     text-align: center;
     background-color: #f8f9fa;
-
     /*overflow-y: hidden;*/
 }
 
@@ -22,6 +43,11 @@ h1.ui.header {
 p {
     color: #555;
     font-size: 1.1em;
+}
+
+p span {
+    color: #0073e6;
+    font-weight: bold;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -126,11 +152,6 @@ p {
 
 .dropzone .button {
     top: 20px !important;
-}
-
-.dropzone p span {
-    color: #0073e6;
-    font-weight: bold;
 }
 
 /* Responsive: Stack boxes on smaller screens */

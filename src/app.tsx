@@ -19,7 +19,7 @@ interface MessageState {
 
 const App = () => {
     const [message, setMessage] = useState<MessageState | null>(null);
-    const [visible, setVisible] = useState(false); // Controls visibility
+    const [visible, setVisible] = useState(false); // messages visibility
 
     const [files, setFiles] = useState<File[]>([]);
     const fileInputRef = useRef<HTMLInputElement>(null);

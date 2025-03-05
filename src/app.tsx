@@ -26,7 +26,7 @@ const App = () => {
 
     const downloadTemplates = () => {
         const templatesFileName = resources[language]?.["templates.zip"] ?? "templates.zip";
-        const templatesFilePath = `/assets/templates/${language}/${templatesFileName}`;
+        const templatesFilePath = `${process.env.PUBLIC_URL}/templates/${language}/${templatesFileName}`;
         fetch(templatesFilePath)
             .then((response) => response.blob())
             .then((blob) => {

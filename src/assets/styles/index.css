@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Messages                                                                                                           */
 /* ------------------------------------------------------------------------------------------------------------------ */
 .message-container {
     overflow: hidden;
-    transition: max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+    animation: fadeIn ease 0.5s;
 }
 
 .message-container.expanded {
     opacity: 1;
-    transition: opacity 1s ease, max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+    transition: opacity 1s ease, max-height 1s ease, padding 1s ease, margin 1s ease;
 }
 
 .message-container.collapsed {
     max-height: 0;
     opacity: 0;
-    transition: opacity 1s ease, max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+    transition: opacity 1s ease, max-height 1s ease, padding 1s ease, margin 1s ease;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -48,6 +48,13 @@ p {
 p span {
     color: #0073e6;
     font-weight: bold;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -114,13 +121,33 @@ p span {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
+/* Instructions popup                                                                                                 */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.instructions-popup {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn ease 0.5s;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
 /* Upload                                                                                                             */
 /* ------------------------------------------------------------------------------------------------------------------ */
 .upload-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
 .dropzone {
@@ -148,10 +175,6 @@ p span {
 
 .dropzone p:last-of-type {
     margin-bottom: 20px;
-}
-
-.dropzone .button {
-    top: 20px !important;
 }
 
 /* Responsive: Stack boxes on smaller screens */

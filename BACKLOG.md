@@ -6,8 +6,9 @@
 [x] i18n start
 [x] EN/ES csv templates
 [x] template download logic  
+[x] Examples popup
+[x] Refactor to components
 
-[ ] Examples popup  
 [ ] Examples carrousel  
 [ ] Examples tables  
 

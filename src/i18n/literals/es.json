@@ -10,7 +10,7 @@
   "instructions.collect.p": "Recoja su fichero familiar y visualícelo en cualquier visor. ¿No conoce uno? Pruebe aquí",
   "instructions.templates.downloaded": "Revise su carpeta de descargas",
   "instructions.templates.compressed": "Encontrará las 3 plantillas dentro del archivo comprimido:",
-  "dropzone.p.drag-n-drop": "Arrastre aquí las plantillas rellenadas, o ",
+  "dropzone.p.drag-n-drop": "Arrastre aquí las plantillas ya rellenadas, o ",
   "dropzone.p.browse-them": "explore sus archivos",
   "dropzone.p.files-needed": "Necesitaremos los 3 archivos",
   "dropzone.button.browse-files": "Explorar archivos",

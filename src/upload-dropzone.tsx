@@ -49,11 +49,9 @@ export const UploadDropzone = () => {
                     <FormattedMessage id="dropzone.button.browse-files" defaultMessage="Browse files" />
                 </Button>
             </div>
-            <div>
-                <Button primary disabled={true}>
-                    <FormattedMessage id="dropzone.button.submit" defaultMessage="Submit" />
-                </Button>
-            </div>
+            <Button primary disabled={true}>
+                <FormattedMessage id="dropzone.button.submit" defaultMessage="Submit" />
+            </Button>
         </div>
     );
 };

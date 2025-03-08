@@ -41,8 +41,13 @@ export const App = () => {
                 </div>
             )}
 
-            <Header as='h1'><FormattedMessage id="header.h1" defaultMessage="Digitalize all your genealogy records into a family file"/></Header>
-            <p><FormattedMessage id="header.p" defaultMessage="It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative"/> <Icon name="credit card"/></p>
+            <Header as='h1'>
+                <FormattedMessage id="header.h1" defaultMessage="Digitalize all your genealogy records into a family file"/>
+            </Header>
+            <p>
+                <FormattedMessage id="header.p" defaultMessage="It is (and will always be) free up to 50 relatives. Above 50 relatives, $0.5 per relative"/>&nbsp;
+                <Icon name="credit card"/>
+            </p>
 
             {/* INSTRUCTIONS SECTION ------------------------------------------------------------------------------- */}
             <InstructionsSection showMessage={showMessage} instructionsRef={instructionsRef}/>

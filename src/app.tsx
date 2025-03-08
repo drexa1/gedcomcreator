@@ -41,6 +41,7 @@ export const App = () => {
                 </div>
             )}
 
+            {/* HEADER SECTION ------------------------------------------------------------------------------------- */}
             <Header as='h1'>
                 <FormattedMessage id="header.h1" defaultMessage="Digitalize all your genealogy records into a family file"/>
             </Header>

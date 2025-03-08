@@ -1,7 +1,7 @@
 import {forwardRef, useImperativeHandle, useState} from "react";
 import {Portal} from "semantic-ui-react";
 
-export const InstructionsPopup = forwardRef(({}, ref) => {
+export const InstructionsPopup = forwardRef((_, ref) => {
     const [isOpen, setOpen] = useState<boolean>(false);
 
     // Exposing the `open` method to parent component via the ref

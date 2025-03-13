@@ -8,8 +8,7 @@
 [x] template download logic  
 [x] Examples popup
 [x] Refactor to components
-
-[ ] Examples carrousel  
+[ ] Examples carousel  
 [ ] Examples tables  
 
 [ ] Files upload validation  

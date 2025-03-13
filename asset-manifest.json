@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gedcomcreator/static/css/main.865709d0.chunk.css",
-    "main.js": "/gedcomcreator/static/js/main.6350a561.chunk.js",
-    "main.js.map": "/gedcomcreator/static/js/main.6350a561.chunk.js.map",
+    "main.js": "/gedcomcreator/static/js/main.225691c7.chunk.js",
+    "main.js.map": "/gedcomcreator/static/js/main.225691c7.chunk.js.map",
     "runtime-main.js": "/gedcomcreator/static/js/runtime-main.92c543c8.js",
     "runtime-main.js.map": "/gedcomcreator/static/js/runtime-main.92c543c8.js.map",
     "static/css/2.8f96662a.chunk.css": "/gedcomcreator/static/css/2.8f96662a.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.8f96662a.chunk.css",
     "static/js/2.d185c314.chunk.js",
     "static/css/main.865709d0.chunk.css",
-    "static/js/main.6350a561.chunk.js"
+    "static/js/main.225691c7.chunk.js"
   ]
 }

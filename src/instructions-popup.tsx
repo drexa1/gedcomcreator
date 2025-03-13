@@ -1,6 +1,7 @@
 import {forwardRef, useEffect, useImperativeHandle, useState} from "react";
-import {Header, Icon, Modal, Portal} from "semantic-ui-react";
+import {Header, Modal} from "semantic-ui-react";
 import { useSwipeable } from "react-swipeable";
+import {Arrow} from "./instructions-popup-arrow";
 
 export const InstructionsPopup = forwardRef((_, ref) => {
     const [isOpen, setOpen] = useState<boolean>(false);
@@ -46,21 +47,8 @@ export const InstructionsPopup = forwardRef((_, ref) => {
         <Modal open={isOpen} onClose={() => setOpen(false)} className="instructions-popup">
             <div className="carousel-wrapper" {...swipeHandlers}>
                 {/* Left Arrow */}
-                <div
-                    className={`arrow left-arrow ${currentIndex === 0 ? "hidden" : ""}`}
-                    onClick={prevSlide}
-                    onMouseDown={handleMouseDown}
-                    onMouseUp={handleMouseUp}>
-                    <svg width="80" height="100%" viewBox="0 0 24 48">
-                        <path
-                            d="M15 4l-8 20 8 20"
-                            stroke="lightgray"
-                            strokeWidth="2"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"/>
-                    </svg>
-                </div>
+                <Arrow direction="left" onClick={prevSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === 0}/>
+
                 {/* Main Content */}
                 <div className="carousel-content">
                     <Header as="h1">Card {currentIndex + 1} Header</Header>
@@ -71,24 +59,9 @@ export const InstructionsPopup = forwardRef((_, ref) => {
                         ))}
                     </div>
                 </div>
+
                 {/* Right Arrow */}
-                {currentIndex < totalCards - 1 && (
-                    <div
-                        className={`arrow right-arrow ${currentIndex === totalCards - 1 ? "hidden" : ""}`}
-                        onClick={nextSlide}
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}>
-                        <svg width="80" height="100%" viewBox="0 0 24 48">
-                            <path
-                                d="M9 4l8 20-8 20"
-                                stroke="lightgray"
-                                strokeWidth="2"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"/>
-                        </svg>
-                    </div>
-                )}
+                <Arrow direction="right" onClick={nextSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === totalCards - 1}/>
             </div>
         </Modal>
     );

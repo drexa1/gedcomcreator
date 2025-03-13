@@ -2,6 +2,7 @@ import {forwardRef, useEffect, useImperativeHandle, useState} from "react";
 import {Header, Modal} from "semantic-ui-react";
 import { useSwipeable } from "react-swipeable";
 import {Arrow} from "./instructions-popup-arrow";
+import {InstructionsContent} from "./instructions-popup-content";
 
 export const InstructionsPopup = forwardRef((_, ref) => {
     const [isOpen, setOpen] = useState<boolean>(false);
@@ -50,15 +51,7 @@ export const InstructionsPopup = forwardRef((_, ref) => {
                 <Arrow direction="left" onClick={prevSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === 0}/>
 
                 {/* Main Content */}
-                <div className="carousel-content">
-                    <Header as="h1">Card {currentIndex + 1} Header</Header>
-                    <div className="carousel-body">This is the content of card {currentIndex + 1}</div>
-                    <div className="dots-container">
-                        {Array.from({ length: totalCards }).map((_, index) => (
-                            <span key={index} className={`dot ${index === currentIndex ? "active" : ""}`} />
-                        ))}
-                    </div>
-                </div>
+                <InstructionsContent currentIndex={currentIndex} totalCards={totalCards} />
 
                 {/* Right Arrow */}
                 <Arrow direction="right" onClick={nextSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === totalCards - 1}/>

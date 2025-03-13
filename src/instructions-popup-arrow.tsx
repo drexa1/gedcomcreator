@@ -8,7 +8,7 @@ interface ArrowProps {
     hidden: boolean;
 }
 
-export const Arrow: React.FC<ArrowProps> = ({direction, onClick, onMouseDown, onMouseUp, hidden}) => {
+export const Arrow: React.FC<ArrowProps> = ({ direction, onClick, onMouseDown, onMouseUp, hidden }) => {
     const arrowClass = direction === "left" ? "left-arrow" : "right-arrow";
     const svgPath = direction === "left" ? "M15 4l-8 20 8 20" : "M9 4l8 20-8 20";
     return (

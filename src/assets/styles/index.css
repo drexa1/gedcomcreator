@@ -171,13 +171,7 @@ p span {
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease, transform 0.1s;
-    cursor: pointer;
     background: white;
-}
-
-.arrow svg {
-    width: 100%;
-    height: 90%;
 }
 
 .arrow.left-arrow {
@@ -191,6 +185,19 @@ p span {
 .arrow.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.arrow svg {
+    width: 100%;
+    height: 90%;
+}
+
+.arrow:active svg {
+    transform: scale(0.9); /* On click, only the arrow being pressed shrinks */
+}
+
+.arrow:active svg path {
+    stroke: darkgray;
 }
 
 .carousel-content {
@@ -207,7 +214,7 @@ p span {
     width: 90%;
     max-width: 1000px;
     font-size: 1.5rem;
-    background: #f0f0f0;
+    background: lightgray;
     text-align: center;
     display: flex;
     align-items: center;

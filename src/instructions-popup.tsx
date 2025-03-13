@@ -45,11 +45,14 @@ export const InstructionsPopup = forwardRef((_, ref) => {
                     onClick={prevSlide}
                     onMouseDown={handleMouseDown}
                     onMouseUp={handleMouseUp}>
-                    <svg width="80"
-                        height="100%"
-                        viewBox="0 0 24 48"
-                        style={{ transform: isClicked ? "scale(0.9)" : "scale(1)", transition: "transform 0.1s" }}>
-                        <path d="M15 4l-8 20 8 20" stroke="lightgray" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="80" height="100%" viewBox="0 0 24 48">
+                        <path
+                            d="M15 4l-8 20 8 20"
+                            stroke="lightgray"
+                            strokeWidth="2"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"/>
                     </svg>
                 </div>
                 {/* Main Content */}
@@ -69,12 +72,14 @@ export const InstructionsPopup = forwardRef((_, ref) => {
                         onClick={nextSlide}
                         onMouseDown={handleMouseDown}
                         onMouseUp={handleMouseUp}>
-                        <svg
-                            width="80"
-                            height="100%"
-                            viewBox="0 0 24 48"
-                            style={{ transform: isClicked ? "scale(0.9)" : "scale(1)", transition: "transform 0.1s" }}>
-                            <path d="M9 4l8 20-8 20" stroke="lightgray" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg width="80" height="100%" viewBox="0 0 24 48">
+                            <path
+                                d="M9 4l8 20-8 20"
+                                stroke="lightgray"
+                                strokeWidth="2"
+                                fill="none"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"/>
                         </svg>
                     </div>
                 )}

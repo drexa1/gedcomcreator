@@ -172,7 +172,7 @@ p span {
     justify-content: center;
     transition: opacity 0.3s ease, transform 0.1s;
     cursor: pointer;
-    background: gray;
+    background: white;
 }
 
 .arrow svg {

@@ -1,7 +1,7 @@
 import React, {forwardRef, Ref, RefObject} from "react";
 import {FormattedMessage} from "react-intl";
 import {MessageState} from "./app";
-import {downloadTemplates} from "./templates";
+import {downloadTemplates} from "./download-templates";
 import {InstructionsPopup} from "./instructions-popup";
 
 export const InstructionsSection = forwardRef(

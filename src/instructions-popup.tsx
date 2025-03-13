@@ -1,12 +1,18 @@
-import {forwardRef, useImperativeHandle, useState} from "react";
+import {forwardRef, useEffect, useImperativeHandle, useState} from "react";
 import {Header, Icon, Modal, Portal} from "semantic-ui-react";
 import { useSwipeable } from "react-swipeable";
 
 export const InstructionsPopup = forwardRef((_, ref) => {
     const [isOpen, setOpen] = useState<boolean>(false);
+    const [isClicked, setIsClicked] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalCards = 4;
-    const [isClicked, setIsClicked] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setCurrentIndex(0); // Reset slide index to 0 whenever the modal opens
+        }
+    }, [isOpen]);
 
     const nextSlide = () => {
         if (currentIndex < totalCards - 1) {

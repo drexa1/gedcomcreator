@@ -20,8 +20,6 @@ export const App = () => {
     const showMessage = (msg: MessageState) => {
         setMessage(msg);
         setMessageVisible(true);
-        // setTimeout(() => setMessageVisible(false), 15000);
-        // setTimeout(() => setMessage(null), 20000);
     };
 
     return (

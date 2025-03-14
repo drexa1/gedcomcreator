@@ -31,7 +31,7 @@ export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageSt
             }
         } catch (error) {
             if (error instanceof Error) {
-                setMessage({type: "negative", header: "File Upload Error", text: error.message});
+                setMessage({ type: "negative", header: "File Upload Error", text: error.message });
             }
         }
     };
@@ -43,25 +43,19 @@ export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageSt
                 onClick={handleUploadClick}
                 onDrop={handleUploadDrop}
                 onDragOver={(e) => e.preventDefault()}>
-                <input
-                    type="file"
-                    multiple
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    style={{ display: "none" }}
-                />
+                <input type="file" multiple ref={fileInputRef} onChange={handleFileChange} style={{ display: "none" }}/>
                 <p>
-                    <FormattedMessage id="dropzone.p.drag-n-drop" defaultMessage="Drag & drop here your filled assets.templates, or " />
-                    <span><FormattedMessage id="dropzone.p.browse-them" defaultMessage="browse them" /></span>
+                    <FormattedMessage id="dropzone.p.drag-n-drop" defaultMessage="Drag & drop here your filled assets.templates, or "/>
+                    <span><FormattedMessage id="dropzone.p.browse-them" defaultMessage="browse them"/></span>
                 </p>
-                <p><FormattedMessage id="dropzone.p.files-needed" defaultMessage="We need all the 3 files" /></p>
+                <p><FormattedMessage id="dropzone.p.files-needed" defaultMessage="We need all the 3 files"/></p>
                 <Button>
-                    <Icon name="upload" />
-                    <FormattedMessage id="dropzone.button.browse-files" defaultMessage="Browse files" />
+                    <Icon name="upload"/>
+                    <FormattedMessage id="dropzone.button.browse-files" defaultMessage="Browse files"/>
                 </Button>
             </div>
             <Button primary disabled={true}>
-                <FormattedMessage id="dropzone.button.submit" defaultMessage="Submit" />
+                <FormattedMessage id="dropzone.button.submit" defaultMessage="Submit"/>
             </Button>
         </div>
     );

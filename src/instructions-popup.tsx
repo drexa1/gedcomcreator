@@ -51,7 +51,7 @@ export const InstructionsPopup = forwardRef((_, ref) => {
                 <Arrow direction="left" onClick={prevSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === 0}/>
 
                 {/* Main Content */}
-                <InstructionsContent currentIndex={currentIndex} totalCards={totalCards} />
+                <InstructionsContent currentIndex={currentIndex} totalCards={totalCards}/>
 
                 {/* Right Arrow */}
                 <Arrow direction="right" onClick={nextSlide} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} hidden={currentIndex === totalCards - 1}/>

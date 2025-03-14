@@ -15,7 +15,7 @@ export const InstructionsSection = forwardRef(
         return (
         // INSTRUCTIONS SECTION ----------------------------------------------------------------------------------------
         <div className="instructions-wrapper" ref={ref}>
-                <h2><FormattedMessage id="instructions.h2" defaultMessage="How the tool works" /></h2>
+                <h2><FormattedMessage id="instructions.h2" defaultMessage="How the tool works"/></h2>
                 <div className="instructions-container">
                     <div className="instruction-box" onClick={() => downloadTemplates({ showMessage })}>
                         <h3><FormattedMessage id="instructions.download.h3" defaultMessage="Download"/></h3>
@@ -26,16 +26,16 @@ export const InstructionsSection = forwardRef(
                         </p>
                     </div>
                     <div className="instruction-box" onClick={() => instructionsRef.current?.open()}>
-                        <h3><FormattedMessage id="instructions.fill-in.h3" defaultMessage="Fill-in" /></h3>
+                        <h3><FormattedMessage id="instructions.fill-in.h3" defaultMessage="Fill-in"/></h3>
                         <p>
                             <FormattedMessage
                                 id="instructions.fill-in.p"
                                 defaultMessage="Fill-in each template with the family records. Check here if you have doubts."/>
                         </p>
                     </div>
-                    <InstructionsPopup ref={instructionsRef} />
+                    <InstructionsPopup ref={instructionsRef}/>
                     <div className="instruction-box">
-                        <h3><FormattedMessage id="instructions.collect.h3" defaultMessage="Collect" /></h3>
+                        <h3><FormattedMessage id="instructions.collect.h3" defaultMessage="Collect"/></h3>
                         <p>
                             <FormattedMessage
                                 id="instructions.collect.p"

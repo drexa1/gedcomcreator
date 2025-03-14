@@ -1,15 +1,21 @@
 import Papa from "papaparse"
+import {useIntl} from "react-intl";
 
-const validationSchemas = {
-    "1_individuals.csv": ["id", "name", "surname", "nickname", "sex", "YOB", "ethnic", "clan", "notes"],
-    "2_relationships.csv": ["person_id", "father_id", "mother_id", "notes"],
-    "3_families.csv": ["husband_id", "wife_id"],
-}
+const validationSchemas = () => {
+    return {
+        [useIntl().formatMessage({ id: "individuals.csv", defaultMessage: "1-individuals.csv" })]:
+            ["id", "name", "surname", "nickname", "sex", "YOB", "ethnic", "clan", "notes"],
+        [useIntl().formatMessage({ id: "parents.csv", defaultMessage: "2-parents.csv" })]:
+            ["person_id", "father_id", "mother_id", "notes"],
+        [useIntl().formatMessage({ id: "relationships.csv", defaultMessage: "3-relationships.csv" })]:
+            ["husband_id", "wife_id"],
+    };
+};
 
 export const validateUploadedFiles = (files: FileList | null) => {
     if (!files) return null
     // Validate file names
-    const expectedFilenames = Object.keys(validationSchemas)
+    const expectedFilenames = Object.keys(validationSchemas())
     if (!validateFilenames(Array.from(files), expectedFilenames)) {
         return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
     }
@@ -72,12 +78,12 @@ function validateFile(filename: string, content: string) {
         return false;
     }
     const rows = parsedData.data as Record<string, string>[];
-    return validateColumns(filename, rows, validationSchemas[filename])
+    return validateColumns(filename, rows, validationSchemas()[filename])
 }
 
 function validateColumns(filename: string, rows: Record<string, string>[], requiredColumns: string[]) {
-    const headers = Object.keys(rows[0]);
     // Check for missing columns
+    const headers = Object.keys(rows[0]);
     const missingColumns = requiredColumns.filter(col => !headers.includes(col));
     if (missingColumns.length) {
         const error = `${filename}: the following required columns are missing: ${missingColumns.join(", ")}`

@@ -1,5 +1,5 @@
 import {forwardRef, useEffect, useImperativeHandle, useState} from "react";
-import {Header, Modal} from "semantic-ui-react";
+import {Modal} from "semantic-ui-react";
 import { useSwipeable } from "react-swipeable";
 import {Arrow} from "./instructions-popup-arrow";
 import {InstructionsContent} from "./instructions-popup-content";

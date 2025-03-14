@@ -54,7 +54,7 @@ export const App = () => {
             <InstructionsSection showMessage={showMessage} instructionsRef={instructionsRef}/>
 
             {/* UPLOAD SECTION ------------------------------------------------------------------------------------- */}
-            <UploadDropzone/>
+            <UploadDropzone setMessage={setMessage}/>
 
         </div>
     );

@@ -2,8 +2,9 @@ import React, {ChangeEvent, DragEvent, useRef, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Button, Icon} from "semantic-ui-react";
 import {validateUploadedFiles} from "./validate-upload";
+import {MessageState} from "./app";
 
-export const UploadDropzone = () => {
+export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageState | null) => void }) => {
     const [files, setFiles] = useState<File[]>([]);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -21,10 +22,16 @@ export const UploadDropzone = () => {
     };
 
     const handleFiles = async (newFiles: FileList | null) => {
-        if (newFiles) {
-            const validFiles = validateUploadedFiles(newFiles);
-            if (validFiles) {
-                setFiles([...files, ...validFiles]);  // add to previous
+        try {
+            if (newFiles) {
+                const validFiles = validateUploadedFiles(newFiles);
+                if (validFiles) {
+                    setFiles([...files, ...validFiles]);  // add to previous
+                }
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                setMessage({type: "negative", header: "File Upload Error", text: error.message});
             }
         }
     };

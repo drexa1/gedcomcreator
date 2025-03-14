@@ -11,7 +11,7 @@ export const validateUploadedFiles = (files: FileList | null) => {
     // Validate file names
     const expectedFilenames = Object.keys(validationSchemas)
     if (!validateFilenames(Array.from(files), expectedFilenames)) {
-        return null  // TODO: raise Exception with message
+        return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
     }
     // Basic content validations
     const fileReadPromises = Array.from(files).map(file => {
@@ -47,7 +47,7 @@ export const validateUploadedFiles = (files: FileList | null) => {
         // Validate number of files
         if (!validFiles || validFiles.length < 3 || validFiles.length > 3) {
             console.error("Wrong number of uploaded files...")
-            return null  // TODO: raise Exception with message
+            return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
         }
         // (event.target as HTMLInputElement).value = ''; // Reset the file input
         return validFiles

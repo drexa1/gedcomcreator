@@ -1,10 +1,10 @@
-import {validateFile, validationSchemas} from "./upload-validate-schemas";
+import {validateFile, useValidationSchemas} from "./upload-validate-schemas";
 
 export const validateUploadedFiles = (files: FileList | null) => {
     if (!files) return null
 
     // Validate file names
-    const expectedFilenames = Object.keys(validationSchemas())
+    const expectedFilenames = Object.keys(useValidationSchemas())
     if (!validateFilenames(Array.from(files), expectedFilenames)) {
         return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
     }

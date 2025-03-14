@@ -1,7 +1,7 @@
 import {useIntl} from "react-intl";
 import Papa from "papaparse";
 
-export const validationSchemas = () => {
+export const useValidationSchemas = () => {  // custom hook naming convention
 
     // Keys: filenames
     const individualsFilename = useIntl().formatMessage({ id: "individuals.csv", defaultMessage: "1-individuals.csv" });
@@ -37,7 +37,7 @@ export function validateFile(filename: string, content: string) {
         return false;
     }
     const rows = parsedData.data as Record<string, string>[];
-    return validateColumns(filename, rows, validationSchemas()[filename])
+    return validateColumns(filename, rows, useValidationSchemas()[filename])
 }
 
 function validateColumns(filename: string, rows: Record<string, string>[], requiredColumns: string[]) {

@@ -33,10 +33,10 @@ export const InstructionsPopup = forwardRef((_, ref) => {
     const handleMouseUp = () => setIsClicked(false);
 
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: nextSlide,    // Swipe left to go to the next slide
-        onSwipedRight: prevSlide,   // Swipe right to go back
-        preventScrollOnSwipe: true, // Prevents scrolling while swiping
-        trackMouse: true            // Allows swipe on desktop too
+        onSwipedLeft: nextSlide,    // swipe left to go to the next slide
+        onSwipedRight: prevSlide,   // swipe right to go back
+        preventScrollOnSwipe: true, // prevents scrolling while swiping
+        trackMouse: true            // allows swipe on desktop too
     });
 
     // Exposing the `open` method to parent component via the ref

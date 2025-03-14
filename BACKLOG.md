@@ -8,21 +8,22 @@
 [x] template download logic  
 [x] Examples popup
 [x] Refactor to components
-[ ] Examples carousel  
-[ ] Examples tables  
-
+[ ] Improve carousel arrows
 [ ] Files upload validation  
 
 [ ] Backend bootstrap  
-[ ] Backend server validation  
+[ ] Backend server conversion  
 [ ] Data store  
 
 [ ] Download callback
+[ ] Examples carousel
 [ ] Receipt
 
 [ ] Contact form
 
 [ ] i18n button
+
+[ ] Repo readme
 
 [ ] i18n for EN/ES/PL  
 [ ] CSV assets.templates for EN/ES/PL  

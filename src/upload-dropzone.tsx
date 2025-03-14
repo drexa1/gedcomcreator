@@ -1,6 +1,7 @@
 import React, {ChangeEvent, DragEvent, useRef, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Button, Icon} from "semantic-ui-react";
+import {validateUploadedFiles} from "./validate-upload";
 
 export const UploadDropzone = () => {
     const [files, setFiles] = useState<File[]>([]);
@@ -10,18 +11,21 @@ export const UploadDropzone = () => {
         fileInputRef.current?.click();
     };
 
-    const handleUploadDrop = (event: DragEvent<HTMLDivElement>) => {
+    const handleUploadDrop = async (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        handleFiles(event.dataTransfer.files);
+        await handleFiles(event.dataTransfer.files);
     };
 
-    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        handleFiles(event.target.files);
+    const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
+        await handleFiles(event.target.files);
     };
 
-    const handleFiles = (newFiles: FileList | null) => {
+    const handleFiles = async (newFiles: FileList | null) => {
         if (newFiles) {
-            setFiles([...files, ...Array.from(newFiles)]);
+            const validFiles = validateUploadedFiles(newFiles);
+            if (validFiles) {
+                setFiles([...files, ...validFiles]);  // add to previous
+            }
         }
     };
 

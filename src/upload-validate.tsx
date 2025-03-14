@@ -1,14 +1,16 @@
 import Papa from "papaparse"
-import {validationSchemas} from "./upload-validate-schemas";
+import {validateFile, validationSchemas} from "./upload-validate-schemas";
 
 export const validateUploadedFiles = (files: FileList | null) => {
     if (!files) return null
+
     // Validate file names
     const expectedFilenames = Object.keys(validationSchemas())
     if (!validateFilenames(Array.from(files), expectedFilenames)) {
         return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
     }
-    // Basic content validations
+
+    // Basic schema validation
     const fileReadPromises = Array.from(files).map(file => {
         return new Promise<File | null>((resolve) => {
             const reader = new FileReader();
@@ -29,6 +31,7 @@ export const validateUploadedFiles = (files: FileList | null) => {
             };
         });
     });
+
     // Wait for all file validations to complete
     Promise.all(fileReadPromises).then(results => {
         const validFiles = results.filter((file): file is File => file !== null);
@@ -56,28 +59,6 @@ function validateFilenames(files: File[], validFilenames: string[]): boolean {
             console.error(`Invalid filename: ${filename}`);
             return false;
         }
-    }
-    return true;
-}
-
-function validateFile(filename: string, content: string) {
-    const parsedData = Papa.parse(content, { header: true, skipEmptyLines: true });
-    if (parsedData.errors.length) {
-        console.error("CSV loading errors:", parsedData.errors);
-        return false;
-    }
-    const rows = parsedData.data as Record<string, string>[];
-    return validateColumns(filename, rows, validationSchemas()[filename])
-}
-
-function validateColumns(filename: string, rows: Record<string, string>[], requiredColumns: string[]) {
-    // Check for missing columns
-    const headers = Object.keys(rows[0]);
-    const missingColumns = requiredColumns.filter(col => !headers.includes(col));
-    if (missingColumns.length) {
-        const error = `${filename}: the following required columns are missing: ${missingColumns.join(", ")}`
-        console.error(error);
-        return false;
     }
     return true;
 }

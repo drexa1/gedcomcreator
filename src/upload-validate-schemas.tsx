@@ -1,4 +1,5 @@
 import {useIntl} from "react-intl";
+import Papa from "papaparse";
 
 export const validationSchemas = () => {
 
@@ -27,3 +28,26 @@ export const validationSchemas = () => {
         relationshipsFilename: relationshipsFileColumns
     };
 };
+
+
+export function validateFile(filename: string, content: string) {
+    const parsedData = Papa.parse(content, { header: true, skipEmptyLines: true });
+    if (parsedData.errors.length) {
+        console.error("CSV loading errors:", parsedData.errors);
+        return false;
+    }
+    const rows = parsedData.data as Record<string, string>[];
+    return validateColumns(filename, rows, validationSchemas()[filename])
+}
+
+function validateColumns(filename: string, rows: Record<string, string>[], requiredColumns: string[]) {
+    // Check for missing columns
+    const headers = Object.keys(rows[0]);
+    const missingColumns = requiredColumns.filter(col => !headers.includes(col));
+    if (missingColumns.length) {
+        const error = `${filename}: the following required columns are missing: ${missingColumns.join(", ")}`
+        console.error(error);
+        return false;
+    }
+    return true;
+}

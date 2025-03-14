@@ -1,4 +1,3 @@
-import Papa from "papaparse"
 import {validateFile, validationSchemas} from "./upload-validate-schemas";
 
 export const validateUploadedFiles = (files: FileList | null) => {

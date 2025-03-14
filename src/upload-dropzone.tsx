@@ -1,7 +1,7 @@
 import React, {ChangeEvent, DragEvent, useRef, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Button, Icon} from "semantic-ui-react";
-import {validateUploadedFiles} from "./validate-upload";
+import {validateUploadedFiles} from "./upload-validate";
 import {MessageState} from "./app";
 
 export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageState | null) => void }) => {

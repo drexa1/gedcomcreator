@@ -1,16 +1,5 @@
 import Papa from "papaparse"
-import {useIntl} from "react-intl";
-
-const validationSchemas = () => {
-    return {
-        [useIntl().formatMessage({ id: "individuals.csv", defaultMessage: "1-individuals.csv" })]:
-            ["id", "name", "surname", "nickname", "sex", "YOB", "ethnic", "clan", "notes"],
-        [useIntl().formatMessage({ id: "parents.csv", defaultMessage: "2-parents.csv" })]:
-            ["person_id", "father_id", "mother_id", "notes"],
-        [useIntl().formatMessage({ id: "relationships.csv", defaultMessage: "3-relationships.csv" })]:
-            ["husband_id", "wife_id"],
-    };
-};
+import {validationSchemas} from "./upload-validate-schemas";
 
 export const validateUploadedFiles = (files: FileList | null) => {
     if (!files) return null

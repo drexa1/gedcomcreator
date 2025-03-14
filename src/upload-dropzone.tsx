@@ -1,7 +1,7 @@
 import React, {ChangeEvent, DragEvent, useRef, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Button, Icon} from "semantic-ui-react";
-import {validateUploadedFiles} from "./upload-validate";
+import {useUploadValidation} from "./upload-validate";
 import {MessageState} from "./app";
 
 export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageState | null) => void }) => {
@@ -24,7 +24,7 @@ export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageSt
     const handleFiles = async (newFiles: FileList | null) => {
         try {
             if (newFiles) {
-                const validFiles = validateUploadedFiles(newFiles);
+                const validFiles = useUploadValidation(newFiles);
                 if (validFiles) {
                     setFiles([...files, ...validFiles]);  // add to previous
                 }

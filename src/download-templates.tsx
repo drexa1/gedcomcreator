@@ -4,8 +4,14 @@ import language from "./index";
 import {MessageState} from "./app";
 
 export const DownloadTemplates = ({ showMessage }: { showMessage: (msg: MessageState) => void; }) => {
-    const templatesFileName = useIntl().formatMessage({ id: "templates.zip", defaultMessage: "templates.zip" });
+    const { formatMessage } = useIntl();
+
+    const templatesFileName = formatMessage({ id: "templates.zip", defaultMessage: "templates.zip" });
     const templatesFilePath = `${process.env.PUBLIC_URL}/templates/${language}/${templatesFileName}`;
+
+    const individualsFilename = formatMessage({ id: "individuals.csv", defaultMessage: "1-individuals.csv" });
+    const parentsFilename = formatMessage({ id: "parents.csv", defaultMessage: "2-parents.csv" });
+    const relationshipsFilename = formatMessage({ id: "relationships.csv", defaultMessage: "3-relationships.csv" });
 
     fetch(templatesFilePath)
         .then((response) => response.blob())
@@ -23,9 +29,9 @@ export const DownloadTemplates = ({ showMessage }: { showMessage: (msg: MessageS
                         <FormattedMessage
                             id="instructions.templates.compressed"
                             defaultMessage="You will find the assets.templates in the compressed file:"/>&nbsp;
-                        <span>{useIntl().formatMessage({ id: "individuals.csv", defaultMessage: "1-individuals.csv" })}</span>,&nbsp;
-                        <span>{useIntl().formatMessage({ id: "parents.csv", defaultMessage: "2-parents.csv" })}</span>,&nbsp;
-                        <span>{useIntl().formatMessage({ id: "relationships.csv", defaultMessage: "3-relationships.csv" })}</span>
+                        <span>{individualsFilename}</span>,&nbsp;
+                        <span>{parentsFilename}</span>,&nbsp;
+                        <span>{relationshipsFilename}</span>
                     </>
                 )
             });

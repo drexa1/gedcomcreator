@@ -1,6 +1,6 @@
 import {validateFile, ValidationSchemas} from "./upload-validate-schemas";
 
-export const uploadValidation = (files: FileList | null) => {  // custom hook naming convention
+export const uploadValidation = (files: FileList | null) => {
     if (!files) return null
 
     // Validate file names

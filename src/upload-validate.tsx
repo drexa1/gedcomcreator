@@ -1,10 +1,10 @@
-import {validateFile, validationSchemas} from "./upload-validate-schemas";
+import {validateFile, ValidationSchemas} from "./upload-validate-schemas";
 
 export const uploadValidation = (files: FileList | null) => {  // custom hook naming convention
     if (!files) return null
 
     // Validate file names
-    const expectedFilenames = Object.keys(validationSchemas())
+    const expectedFilenames = Object.keys(ValidationSchemas())
     if (!validateFilenames(Array.from(files), expectedFilenames)) {
         return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
     }

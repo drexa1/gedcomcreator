@@ -1,7 +1,7 @@
 import React, {forwardRef, Ref, RefObject} from "react";
 import {FormattedMessage} from "react-intl";
 import {MessageState} from "./app";
-import {downloadTemplates} from "./download-templates";
+import {useDownloadTemplates} from "./download-templates";
 import {InstructionsPopup} from "./instructions-popup";
 
 export const InstructionsSection = forwardRef(
@@ -17,7 +17,7 @@ export const InstructionsSection = forwardRef(
         <div className="instructions-wrapper" ref={ref}>
                 <h2><FormattedMessage id="instructions.h2" defaultMessage="How the tool works"/></h2>
                 <div className="instructions-container">
-                    <div className="instruction-box" onClick={() => downloadTemplates({ showMessage })}>
+                    <div className="instruction-box" onClick={() => useDownloadTemplates({ showMessage })}>
                         <h3><FormattedMessage id="instructions.download.h3" defaultMessage="Download"/></h3>
                         <p>
                             <FormattedMessage

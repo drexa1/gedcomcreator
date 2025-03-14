@@ -14,14 +14,14 @@ export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageSt
 
     const handleUploadDrop = async (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        await handleFiles(event.dataTransfer.files);
+        await HandleFiles(event.dataTransfer.files);
     };
 
     const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-        await handleFiles(event.target.files);
+        await HandleFiles(event.target.files);
     };
 
-    const handleFiles = async (newFiles: FileList | null) => {
+    const HandleFiles = async (newFiles: FileList | null) => {
         try {
             if (newFiles) {
                 const validFiles = useUploadValidation(newFiles);

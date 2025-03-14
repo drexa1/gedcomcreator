@@ -3,7 +3,7 @@ import {FormattedMessage, useIntl} from 'react-intl';
 import language from "./index";
 import {MessageState} from "./app";
 
-export const downloadTemplates = ({ showMessage }: { showMessage: (msg: MessageState) => void; }) => {
+export const useDownloadTemplates = ({ showMessage }: { showMessage: (msg: MessageState) => void; }) => {
     const templatesFileName = useIntl().formatMessage({ id: "templates.zip", defaultMessage: "templates.zip" });
     const templatesFilePath = `${process.env.PUBLIC_URL}/templates/${language}/${templatesFileName}`;
     fetch(templatesFilePath)

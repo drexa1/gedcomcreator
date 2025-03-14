@@ -1,4 +1,4 @@
-import {validateFile, useValidationSchemas} from "./upload-validate-schemas";
+import {ValidateFile, useValidationSchemas} from "./upload-validate-schemas";
 
 export const useUploadValidation = (files: FileList | null) => {  // custom hook naming convention
     if (!files) return null
@@ -16,7 +16,7 @@ export const useUploadValidation = (files: FileList | null) => {  // custom hook
             reader.readAsText(file, "UTF-8");
             reader.onload = () => {
                 const fileContent = reader.result as string;
-                const validFile = validateFile(file.name, fileContent);
+                const validFile = ValidateFile(file.name, fileContent);
                 if (validFile) {
                     resolve(file);
                 } else {

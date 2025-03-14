@@ -30,7 +30,7 @@ export const useValidationSchemas = () => {  // custom hook naming convention
 };
 
 
-export function validateFile(filename: string, content: string) {
+export function ValidateFile(filename: string, content: string) {
     const parsedData = Papa.parse(content, { header: true, skipEmptyLines: true });
     if (parsedData.errors.length) {
         console.error("CSV loading errors:", parsedData.errors);

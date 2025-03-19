@@ -1,22 +1,25 @@
-import {validateFile, ValidationSchemas} from "./upload-validate-schemas";
+import {validateFile, validateFilenames} from "./upload-validate-schemas";
+import {TooManyFilesError} from "./upload-exceptions";
 
-export const uploadValidation = (files: FileList | null) => {
-    if (!files) return null
+export const uploadValidation = (newFiles: FileList | null, files: File[], validationSchemas: Record<string, string[]>) => {
+    if (!newFiles || newFiles.length === 0) return null;
 
-    // Validate file names
-    const expectedFilenames = Object.keys(ValidationSchemas())
-    if (!validateFilenames(Array.from(files), expectedFilenames)) {
-        return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
+    // Validate number of uploaded files
+    if (newFiles.length + files.length > Object.keys(validationSchemas).length) {
+        throw new TooManyFilesError(newFiles.length);
     }
 
+    // Validate filenames
+    validateFilenames(Array.from(newFiles), Object.keys(validationSchemas))
+
     // Basic schema validation
-    const fileReadPromises = Array.from(files).map(file => {
+    const fileReadPromises = Array.from(newFiles).map(file => {
         return new Promise<File | null>((resolve) => {
             const reader = new FileReader();
             reader.readAsText(file, "UTF-8");
             reader.onload = () => {
                 const fileContent = reader.result as string;
-                const validFile = validateFile(file.name, fileContent);
+                const validFile = validateFile(file.name, fileContent, validationSchemas);
                 if (validFile) {
                     resolve(file);
                 } else {
@@ -34,7 +37,7 @@ export const uploadValidation = (files: FileList | null) => {
     // Wait for all file validations to complete
     Promise.all(fileReadPromises).then(results => {
         const validFiles = results.filter((file): file is File => file !== null);
-        const invalidFiles = Array.from(files)
+        const invalidFiles = Array.from(newFiles)
             .filter((file: File) => !validFiles.some(validFile => validFile.name === file.name))
             .map(file => `'${file.name}'`)
             .join(", ");
@@ -47,17 +50,6 @@ export const uploadValidation = (files: FileList | null) => {
             return null  // TODO: reject(new Error(`Invalid file format: ${file.name}`));
         }
         // (event.target as HTMLInputElement).value = ''; // Reset the file input
-        return validFiles
+        return validFiles;
     });
-}
-
-function validateFilenames(files: File[], validFilenames: string[]): boolean {
-    for (const file of files) {
-        const filename = file.name;
-        if (!validFilenames.includes(filename)) {
-            console.error(`Invalid filename: ${filename}`);
-            return false;
-        }
-    }
-    return true;
 }

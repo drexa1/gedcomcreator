@@ -3,10 +3,13 @@ import {FormattedMessage} from "react-intl";
 import {Button, Icon} from "semantic-ui-react";
 import {uploadValidation} from "./upload-validate";
 import {MessageState} from "./app";
+import {useValidationSchemas} from "./upload-validate-schemas";
+import {UploadError} from "./upload-exceptions";
 
-export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageState | null) => void }) => {
+export const UploadDropzone = ({ showMessage }: { showMessage: (message: MessageState) => void }) => {
     const [files, setFiles] = useState<File[]>([]);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const validationSchemas = useValidationSchemas();
 
     const handleUploadClick = () => {
         fileInputRef.current?.click();
@@ -24,14 +27,18 @@ export const UploadDropzone = ({ setMessage }: { setMessage: (message: MessageSt
     const HandleFiles = async (newFiles: FileList | null) => {
         try {
             if (newFiles) {
-                const validFiles = uploadValidation(newFiles);
+                const validFiles = uploadValidation(newFiles, files, validationSchemas);
                 if (validFiles) {
                     setFiles([...files, ...validFiles]);  // add to previous
                 }
             }
-        } catch (error) {
-            if (error instanceof Error) {
-                setMessage({ type: "negative", header: "File Upload Error", text: error.message });
+        } catch (e) {
+            if (e instanceof UploadError) {
+                showMessage({
+                    type: "negative",
+                    header: (<FormattedMessage id={ e.literal } defaultMessage={ e.message } values={ e.details }/>),
+                    text: null
+                });
             }
         }
     };

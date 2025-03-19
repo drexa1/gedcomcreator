@@ -14,5 +14,7 @@
   "dropzone.p.browse-them": "explore sus archivos",
   "dropzone.p.files-needed": "Necesitaremos los 3 archivos",
   "dropzone.button.browse-files": "Explorar archivos",
+  "dropzone.upload.invalid.filenames": "Estas no parecen ser nuestras plantillas: {filenames}",
+  "dropzone.upload.too.many": "Solo necesitamos nuestras 3 plantillas",
   "dropzone.button.submit": "Enviar"
 }
